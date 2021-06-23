@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es2018",
+    "module": "esNext",
+    "lib": ["esnext", "dom"],
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": false,
+
+    /* Module Resolution Options */
+    "baseUrl": ".",
+    "paths": {
+      /* Support absolute /imports/* with a leading '/' */
+      "/*": ["*"]
+    },
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "esModuleInterop": true,
+    "preserveSymlinks": true
+  },
+  "exclude": [
+    "./.meteor/**",
+    "./node_modules/**"
+  ]
+}

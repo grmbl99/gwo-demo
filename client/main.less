@@ -1,0 +1,82 @@
+@page-background-color: rgb(245, 245, 245);
+@menu-background-color: rgb(245, 245, 245);
+@background-color: rgb(170, 170, 170);
+@accent-color: rgb(110, 110, 110);
+@progress-background-color: rgb(230, 230, 230);
+@feature-background-color: rgb(252, 252, 250);
+@light-text-color: white;
+@dark-text-color: rgb(50, 50, 50);
+@main-font: Verdana, sans-serif;
+
+@menu-item-width: 150px;
+@sprint-width: 65px;
+@sprint-height: 35px;
+
+:root {
+  font-family: @main-font;
+  font-size: 9pt;
+}
+
+body {
+  background-color: @page-background-color;
+}
+
+.main {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+}
+
+.pi-grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  justify-content: left;
+  gap: 10px 10px;
+  padding-top: 10px;
+}
+
+.new-row {
+  grid-column-start: 1;
+}
+
+.heading {
+  padding: 10px;
+  font-size: 20pt;
+}
+
+.pi-view {
+  float: left;
+  margin: 10px;
+  width: 200px;
+  background-color: @menu-background-color;
+  box-shadow: 3px 3px 5px gray;
+}
+
+.pi-header {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 15px;
+  background-color: @accent-color;
+  color: @light-text-color;
+  font-weight: bold;
+  font-size: 13pt;
+}
+
+.feature {
+  position: relative;
+  height: 45px;
+  margin-top: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: @feature-background-color;
+  box-shadow: 3px 3px 5px gray;
+}
+
+.feature-name {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  text-decoration: inherit;
+  font-size: 8pt;
+}
