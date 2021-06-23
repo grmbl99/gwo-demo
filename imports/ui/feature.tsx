@@ -32,7 +32,7 @@ function Feature(props: FeaturePropTypes): ReactElement {
         // cursor: 'move'
       }}
     >
-      <div className='feature-name'>{trimmedName}</div>
+      <div className='feature-name'>{trimmedName}, {feature.project}, {feature.pi}</div>
     </div>
   );
 }

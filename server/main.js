@@ -20,5 +20,5 @@ Meteor.startup(() => {
     Collections.ProjectsCollection.insert(project)
   );
 
-  console.log('Meteor-4PI v' + version);
+  console.log('GWO-Demo v' + version);
 });

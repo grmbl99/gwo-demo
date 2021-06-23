@@ -5,15 +5,15 @@ import { Feature } from './feature';
 import { CollectionContext } from './context';
 import { OnFeatureDropType } from '/imports/api/types';
 
-export { PiView };
+export { PiCell };
 
-interface PiViewPropTypes {
+interface PiCellPropTypes {
   onFeatureDropped: OnFeatureDropType;
   pi: string;
   project: string;
 }
 
-function PiView(props: PiViewPropTypes): ReactElement | null {
+function PiCell(props: PiCellPropTypes): ReactElement | null {
   const context = React.useContext(CollectionContext);
 
   if (context) {
@@ -31,7 +31,7 @@ function PiView(props: PiViewPropTypes): ReactElement | null {
       [props]
     );
 
-    const featuresList = []; // list of Feature objects
+    const featuresList = [];
     for (const feature of features) {
       if (feature.pi === props.pi && (props.project === '' || feature.project === props.project)) {
         featuresList.push(<Feature key={feature._id} feature={feature} />);
@@ -47,7 +47,7 @@ function PiView(props: PiViewPropTypes): ReactElement | null {
         }}
       >
         <div className='pi-header'>
-          {props.pi} {props.project}
+          {props.pi}
         </div>
         {featuresList}
       </div>

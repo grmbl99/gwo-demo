@@ -3,13 +3,13 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { Meteor } from 'meteor/meteor';
-import { PiViewRow } from './pi-view-row';
+import { ProjectRow } from './project-row';
 import { UpdateType } from '/imports/api/types';
 import { CollectionContext } from './context';
 import { FeaturesCollection, ProjectsCollection } from '/imports/api/collections';
 
 export function App(): ReactElement {
-  // move a feature between teams/projects/pi's
+  // move a feature between projects/pi's
   // (exectued using drag-and-drop)
   function moveFeature(featureId: string, pi: string, project: string) {
     const updates: UpdateType = { pi: pi };
@@ -32,11 +32,11 @@ export function App(): ReactElement {
 
   const pis = ['PI-1', 'PI-2', 'PI-3', 'PI-4'];
   let menuEntryKey = 0;
-  const projectsList = []; // set of PIView's per project
+  const projectsList = [];
 
   for (const project of projects) {
     projectsList.push(
-      <PiViewRow key={menuEntryKey++} onFeatureDropped={moveFeature} pis={pis} projectName={project.name} />
+      <ProjectRow key={menuEntryKey++} onFeatureDropped={moveFeature} pis={pis} projectName={project.name} />
     );
   }
 
