@@ -32,10 +32,10 @@ export function App(): ReactElement {
 
   const pis = ['PI-1', 'PI-2', 'PI-3', 'PI-4'];
   let menuEntryKey = 0;
-  const projectsList = [];
+  const projectRows = [];
 
   for (const project of projects) {
-    projectsList.push(
+    projectRows.push(
       <ProjectRow key={menuEntryKey++} onFeatureDropped={moveFeature} pis={pis} projectName={project.name} />
     );
   }
@@ -46,7 +46,7 @@ export function App(): ReactElement {
         <DndProvider backend={HTML5Backend}>
           <CollectionContext.Provider value={{ features, projects }}>
             <div className='heading'>GWO Demo</div>
-            {projectsList}
+            {projectRows}
           </CollectionContext.Provider>
         </DndProvider>
       </div>

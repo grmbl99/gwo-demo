@@ -15,17 +15,17 @@ function ProjectRow(props: ProjectRowPropTypes): ReactElement | null {
   const context = React.useContext(CollectionContext);
 
   if (context) {
-    const piRow = [];
+    const piCells = [];
     let key = 0;
     for (const pi of props.pis) {
-      piRow.push(<PiCell key={key++} onFeatureDropped={props.onFeatureDropped} pi={pi} project={props.projectName} />);
+      piCells.push(<PiCell key={key++} onFeatureDropped={props.onFeatureDropped} pi={pi} project={props.projectName} />);
     }
 
     return (
       <div className='project-header'>
         {props.projectName}
         <div className='pi-grid-container'>
-          {piRow}
+          {piCells}
         </div>
       </div>
     );
